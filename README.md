@@ -43,7 +43,7 @@ paid services are not required, assuming you can deal with their usage limits.
 
 Add this line to your application's Gemfile:
 
-    gem 'google_oauth_calendar'
+    gem 'google_oauth_calendar' , :git => 'git@github.com:deafgreatdane/google_oauth_calendar.git'
 
 And then execute:
 
