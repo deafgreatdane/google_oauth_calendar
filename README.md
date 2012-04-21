@@ -18,7 +18,7 @@ and queries the list of the user's calendars via the google/api_client
 
 This gem allows you to install these features after your app already exists, rather than using an application
 template such as [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer). This way, it makes
-fewer assumptsion about your other app preferences.
+fewer assumptions about your other app preferences.
 
 ## Configuring Google API
 
@@ -35,7 +35,7 @@ paid services are not required, assuming you can deal with their usage limits.
     1. for "your site or hostname" choose "more options" and use
 
         http://localhost:3000/auth/google_oauth2/callback
-1. copy the client ID and secret into environment variables, with your
+1. copy the client ID and secret into environment variables, for example
 
         export GOOGLE_CLIENT_ID = "YOUR_CLIENT_ID"
         export GOOGLE_CLIENT_SECRET = "YOUR_CLIENT_SECRET"
