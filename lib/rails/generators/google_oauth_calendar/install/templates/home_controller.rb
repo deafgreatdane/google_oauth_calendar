@@ -1,13 +1,9 @@
 class HomeController < ApplicationController
   require 'google/api_client'
+  require 'client_builder'
   def index
     if (user_signed_in? )
-      client = Google::APIClient.new
-      client.authorization.client_id = current_user.token
-
-      client.authorization.scope = 'https://www.googleapis.com/auth/calendar'
-      client.authorization.access_token = current_user.token;
-
+      client = ClientBuilder.get_client(current_user)
       service = client.discovered_api('calendar', 'v3')
       result = client.execute(:api_method => service.calendar_list.list)
 

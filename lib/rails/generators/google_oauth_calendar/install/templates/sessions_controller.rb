@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid']).first || User.create_with_omniauth(auth)
     user.token = auth[:credentials][:token];
+    user.token_expires_at = Time.at(auth[:credentials][:expires_at])
+    user.refresh_token = auth[:credentials][:refresh_token]
     user.save
 
     session[:user_id] = user.id

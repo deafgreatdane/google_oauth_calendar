@@ -10,8 +10,8 @@ a one-stop generator.
 
 Specifically, it
 
-* creates a User model with name &amp; email pulled from Google, and a place to store their access token
-* initializes omniauth to use the google-oath2 strategy for signin
+* creates a User model with name &amp; email pulled from Google, and a place to store their access and refresh token
+* initializes omniauth to use the google-oauth2 strategy for signin
 * creates a SessionsController to react to signin/signout
 * installs a basic root controller that has view showing signin/signout links,
 and queries the list of the user's calendars via the google/api_client

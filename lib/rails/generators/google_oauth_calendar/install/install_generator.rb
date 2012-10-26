@@ -27,7 +27,7 @@ module GoogleOauthCalendar
         route("match '/auth/failure' => 'sessions#failure'")
 
         # setup the user info
-        generate("model User provider:string uid:string name:string email:string token:string")
+        generate("model User provider:string uid:string name:string email:string token:string refresh_token:string token_expires_at:datetime")
 
         inject_into_class "app/models/user.rb", User, <<-USER_METHODS
   def self.create_with_omniauth(auth)
@@ -74,6 +74,7 @@ APP_HELPERS
         # setup the home controller
         template 'home_controller.rb', 'app/controllers/home_controller.rb'
         copy_file 'index.html.erb', 'app/views/home/index.html.erb'
+        copy_file 'client_builder.rb', 'lib/client_builder.rb'
         remove_file 'public/index.html'
         route("root :to => 'home#index'")
       end
